@@ -11,6 +11,7 @@ export default function Home() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [hasMoved, setHasMoved] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [successImage, setSuccessImage] = useState("/aashi.jpg");
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const PHRASES = [
@@ -23,6 +24,16 @@ export default function Home() {
     "I’ve loved you since day one, and I’ll love you for all the days to come. \nI love you Aaaaaassshiiii",
     "You’re the best thing that’s ever happened to me. I feel like the luckiest person in the world because you’re mine.",
     "I can't imagine a single Valentine's Day, or any day, without you by my side.\nI love you Aaaaassshii"
+  ];
+
+  const IMAGES = [
+    "/pic1.jpg",
+    "/pic2.jpg",
+    "/pic3.jpg",
+    "/pic4.jpg",
+    "/pic5.jpg",
+    "/pic6.jpg",
+    "/pic7.jpg"
   ];
 
   const handleNoHover = () => {
@@ -45,7 +56,11 @@ export default function Home() {
     // Select a random phrase
     const randomPhrase = PHRASES[Math.floor(Math.random() * PHRASES.length)];
     setSuccessMessage(randomPhrase);
-    
+
+    // Select a random image
+    const randomImage = IMAGES[Math.floor(Math.random() * IMAGES.length)];
+    setSuccessImage(randomImage);
+
     setIsSuccess(true);
     confetti({
       particleCount: 150,
@@ -143,7 +158,7 @@ export default function Home() {
 
               <div className="w-full aspect-auto bg-transparent rounded-2xl mb-4 md:mb-6 overflow-hidden flex items-center justify-center">
                 <img
-                  src="/aashi.jpg"
+                  src={successImage}
                   alt="Us"
                   className="w-full h-full object-cover rounded-2xl"
                 />

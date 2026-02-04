@@ -22,7 +22,7 @@ export default function Home() {
     "Here’s to this Valentine’s Day and all the ones we have yet to share. I love you",
     "I can’t wait to keep making memories with you (not like the phone incident grrr hihi)",
     "I’ve loved you since day one, and I’ll love you for all the days to come. \nI love you Aaaaaassshiiii",
-    "You’re the best thing that’s ever happened to me. I feel like the luckiest person in the world because you’re mine.",
+    "I'm sooooooo lucky to have you",
     "I can't imagine a single Valentine's Day, or any day, without you by my side.\nI love you Aaaaassshii"
   ];
 

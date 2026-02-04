@@ -10,7 +10,20 @@ export default function Home() {
   const [yesScale, setYesScale] = useState(1);
   const [isSuccess, setIsSuccess] = useState(false);
   const [hasMoved, setHasMoved] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const PHRASES = [
+    "Every day feels like Valentine’s Day when I’m with you. I’m so lucky to have you in my life.",
+    "You’re my favorite person, my favorite place, and my favorite part of every single day.",
+    "I didn’t know what I was missing until I found you. Happy Valentine’s Day to my everything.",
+    "Just a reminder that you are loved more than you know. I'm so glad you're mine.",
+    "Here’s to this Valentine’s Day and all the ones we have yet to share. I love you",
+    "I can’t wait to keep making memories with you (not like the phone incident grrr hihi)",
+    "I’ve loved you since day one, and I’ll love you for all the days to come. \nI love you Aaaaaassshiiii",
+    "You’re the best thing that’s ever happened to me. I feel like the luckiest person in the world because you’re mine.",
+    "I can't imagine a single Valentine's Day, or any day, without you by my side.\nI love you Aaaaassshii"
+  ];
 
   const handleNoHover = () => {
     const maxX = window.innerWidth - 100; // Buffer for button width
@@ -29,6 +42,10 @@ export default function Home() {
   };
 
   const handleYesClick = () => {
+    // Select a random phrase
+    const randomPhrase = PHRASES[Math.floor(Math.random() * PHRASES.length)];
+    setSuccessMessage(randomPhrase);
+    
     setIsSuccess(true);
     confetti({
       particleCount: 150,
@@ -120,10 +137,8 @@ export default function Home() {
                 Yayyyy You said Yes omgggg.
               </h2>
 
-              <p className="text-base md:text-xl text-purple-800 mb-6 md:mb-8 leading-relaxed font-sans px-2">
-                I can&apos;t imagine a single Valentine&apos;s Day, or any day, without you by my side.
-                <br />
-                I love you Aaaaassshii
+              <p className="text-base md:text-xl text-purple-800 mb-6 md:mb-8 leading-relaxed font-sans px-2 whitespace-pre-line">
+                {successMessage}
               </p>
 
               <div className="w-full aspect-auto bg-transparent rounded-2xl mb-4 md:mb-6 overflow-hidden flex items-center justify-center">

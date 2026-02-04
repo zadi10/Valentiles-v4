@@ -64,18 +64,18 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="z-10 flex flex-col items-center gap-12 text-center pt-20"
+            className="z-10 flex flex-col items-center gap-8 md:gap-12 text-center pt-16 md:pt-20"
           >
-            <h1 className="font-dancing-script text-5xl md:text-7xl text-purple-700 drop-shadow-sm pointer-events-none select-none mb-8">
+            <h1 className="font-dancing-script text-4xl md:text-7xl text-purple-700 drop-shadow-sm pointer-events-none select-none mb-6 md:mb-8 px-4">
               Will you be my valentine, Aashi?
             </h1>
 
-            <div className="relative flex items-center justify-center gap-8">
+            <div className="relative flex items-center justify-center gap-4 md:gap-8">
               <motion.button
                 onClick={handleYesClick}
                 layout
                 style={{ scale: yesScale }}
-                className="rounded-xl bg-[#ff4d6d] hover:bg-[#ff3355] text-white font-bold py-3 px-8 text-2xl shadow-md transition-colors duration-200"
+                className="rounded-xl bg-[#ff4d6d] hover:bg-[#ff3355] text-white font-bold py-2 px-6 text-xl md:py-3 md:px-8 md:text-2xl shadow-md transition-colors duration-200"
               >
                 Yes 💖
               </motion.button>
@@ -90,7 +90,7 @@ export default function Home() {
                   top: hasMoved ? noPosition.y : "auto",
                   zIndex: 100,
                 }}
-                className="rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold py-3 px-8 text-xl shadow-md transition-colors duration-200 whitespace-nowrap"
+                className="rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold py-2 px-6 text-lg md:py-3 md:px-8 md:text-xl shadow-md transition-colors duration-200 whitespace-nowrap"
                 animate={hasMoved ? { left: noPosition.x, top: noPosition.y } : {}}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
@@ -112,21 +112,21 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="z-50 relative p-6 md:p-8 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-lg w-full mx-4 text-center font-sans"
+              className="z-50 relative p-6 md:p-8 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-lg w-10/12 md:w-full mx-4 text-center font-sans"
             >
               {/* Close button removed */}
 
-              <h2 className="font-dancing-script text-6xl text-purple-700 mb-6">
+              <h2 className="font-dancing-script text-3xl md:text-6xl text-purple-700 mb-4 md:mb-6">
                 Yayyyy You said Yes omgggg.
               </h2>
 
-              <p className="text-xl text-purple-800 mb-8 leading-relaxed font-sans">
+              <p className="text-base md:text-xl text-purple-800 mb-6 md:mb-8 leading-relaxed font-sans px-2">
                 I can&apos;t imagine a single Valentine&apos;s Day, or any day, without you by my side.
                 <br />
                 I love you Aaaaassshii
               </p>
 
-              <div className="w-full aspect-auto bg-transparent rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+              <div className="w-full aspect-auto bg-transparent rounded-2xl mb-4 md:mb-6 overflow-hidden flex items-center justify-center">
                 <img
                   src="/aashi.jpg"
                   alt="Us"

@@ -112,7 +112,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="z-50 relative p-8 md:p-12 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-2xl w-full mx-4 text-center font-sans"
+              className="z-50 relative p-6 md:p-8 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-lg w-full mx-4 text-center font-sans"
             >
               {/* Close button removed */}
 
